@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exeron - Suplemento Dietario Masculino Oficial</title>
+    <style>
+        /* Cores baseadas no PDF da Exeron: Azul Escuro, Vermelho/Laranja para botões, Cinza Claro para fundo */
+        :root {
+            --primary-blue: #10162a; /* Cor do rodapé e destaques do PDF */
+            --cta-red: #dd331d;      /* Cor do botão "Comprar Ahora" */
+            --cta-hover: #b82715;
+            --bg-light: #f3f3f3;
+            --text-dark: #333333;
+            --text-gray: #666666;
+        }
+        
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #ffffff;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 4px solid var(--primary-blue);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+
+        .container {
+            max-width: 850px;
+            margin: 40px auto;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+        }
+
+        h1 {
+            color: var(--primary-blue);
+            text-align: center;
+            font-size: 32px;
+            margin-top: 0;
+            margin-bottom: 10px;
+            line-height: 1.2;
+        }
+
+        .subtitle {
+            text-align: center;
+            font-size: 18px;
+            color: var(--text-gray);
+            margin-bottom: 40px;
+            font-weight: 500;
+        }
+
+        .product-showcase {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            align-items: flex-start;
+            margin-bottom: 40px;
+        }
+
+        /* Espaço reservado para a Imagem do Produto */
+        .image-placeholder {
+            flex: 1;
+            min-width: 300px;
+            height: 350px;
+            background-color: #e9ecef;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border: 2px dashed #adb5bd;
+            color: #6c757d;
+            font-weight: bold;
+            text-align: center;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .product-details {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .product-details h2 {
+            color: var(--primary-blue);
+            font-size: 24px;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        .price-tag {
+            font-size: 36px;
+            font-weight: 900;
+            color: var(--cta-red);
+            margin: 20px 0;
+            background: #fff5f4;
+            padding: 10px 20px;
+            border-radius: 8px;
+            display: inline-block;
+            border: 1px solid #ffd0cb;
+        }
+
+        .benefits-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 25px 0;
+        }
+
+        .benefits-list li {
+            margin-bottom: 12px;
+            padding-left: 30px;
+            position: relative;
+            font-size: 16px;
+        }
+
+        .benefits-list li::before {
+            content: '✔';
+            color: #28a745;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .warning-box {
+            background-color: #fff3cd;
+            border-left: 5px solid #ffecb5;
+            padding: 15px 20px;
+            margin: 25px 0;
+            font-size: 14px;
+            border-radius: 0 4px 4px 0;
+            color: #856404;
+        }
+
+        .warning-box strong {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 15px;
+        }
+
+        .cta-button {
+            display: block;
+            width: 100%;
+            text-align: center;
+            background-color: var(--cta-red);
+            color: #ffffff;
+            padding: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+            box-shadow: 0 4px 6px rgba(221, 51, 29, 0.3);
+        }
+
+        .cta-button:hover {
+            background-color: var(--cta-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(221, 51, 29, 0.4);
+        }
+
+        .secure-checkout {
+            text-align: center;
+            font-size: 14px;
+            color: var(--text-gray);
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+            margin-top: 50px;
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid #eee;
+        }
+
+        .feature-item h3 {
+            color: var(--primary-blue);
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .feature-item p {
+            font-size: 14px;
+            color: var(--text-gray);
+            margin: 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 12px;
+            color: #888;
+            max-width: 900px;
+            margin: 0 auto;
+            line-height: 1.5;
+        }
+
+        footer strong {
+            color: #555;
+        }
+
+        footer a {
+            color: #888;
+            text-decoration: underline;
+            margin: 0 10px;
+        }
+
+        /* Ajustes para Celular (Mobile Responsivo) */
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+                margin: 20px;
+            }
+            h1 {
+                font-size: 26px;
+            }
+            .price-tag {
+                font-size: 28px;
+            }
+            .cta-button {
+                font-size: 20px;
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <!-- ESPAÇO PARA A LOGO -->
+
+    </header>
+
+    <div class="container">
+        <h1>EXERON: Recuperá tu Energía y Confianza</h1>
+        <p class="subtitle">El suplemento dietario exclusivo para el hombre, formulado con ingredientes de origen natural. Libre de gluten.</p>
+
+        <div class="product-showcase">
+            
+            <!-- ESPAÇO PARA A IMAGEM DO PRODUTO -->
+            <div class="image-placeholder">
+               <img src="exeron imagem.png" alt="Exeron" style="max-width: 100%;">
+                <span style="font-size: 12px; font-weight: normal;">
+                
+                </span>
+            </div>
+
+            <div class="product-details">
+                <h2>Rendimiento para el hombre actual</h2>
+                <p>EXERON es una fórmula pensada para acompañar tu rutina. Combina extractos vegetales respaldados por la fitoterapia para apoyar la vitalidad masculina de manera segura y discreta.</p>
+                
+                <ul class="benefits-list">
+                    <li>Fórmula con <strong>Arginina, Ginkgo Biloba y Zinc</strong>.</li>
+                    <li>Aporta energía física con <strong>Guaraná y Cafeína</strong>.</li>
+                    <li>100% Natural, sin efectos adversos no deseados.</li>
+                    <li>Fácil de tomar: 1 a 2 comprimidos diarios.</li>
+                </ul>
+
+                <div class="price-tag">
+                    Precio: $35.990 ARS
+                </div>
+
+                <div class="warning-box">
+                    <strong>¡Atención! Paso indispensable para tu envío:</strong>
+                    Trabajamos con <b>Pago Contra Entrega</b>. Al realizar tu solicitud, <b>recibirás una llamada telefónica</b> para confirmar tus datos de envío.<br><br>
+                    <i>*Si utilizás un bloqueador de llamadas desconocidas, te recomendamos desactivarlo temporalmente para que podamos procesar tu orden.</i>
+                </div>
+
+                <!-- SEU LINK DE AFILIADO VAI AQUI NO HREF -->
+                <a href="https://m4e19.doctortraffox.com/l" class="cta-button">HACER MI PEDIDO AHORA</a>
+                <div class="secure-checkout">
+                    🔒 Compra 100% Segura | Pagás al recibir en tu domicilio
+                </div>
+            </div>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-item">
+                <h3>100% Natural</h3>
+                <p>Elaborado a base de extractos vegetales y vitaminas. Fórmula sin T.A.C.C.</p>
+            </div>
+            <div class="feature-item">
+                <h3>Envío Discreto</h3>
+                <p>Envíos a toda Argentina en paquete cerrado, sin logos ni marcas externas.</p>
+            </div>
+            <div class="feature-item">
+                <h3>Pago Seguro</h3>
+                <p>Sin tarjetas de crédito. Abonás el producto recién cuando llega a tus manos.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>
+            <strong>Aviso Legal y Descargo de Responsabilidad:</strong><br>
+            EXERON es un suplemento dietario, no es un medicamento. Este producto no está destinado a diagnosticar, tratar, curar o prevenir ninguna enfermedad. El contenido de este sitio es solo para fines informativos y no sustituye el consejo médico profesional. Consulte a su médico antes de consumir si tiene problemas cardíacos, epilepsia, o si está bajo tratamiento médico continuo. No consumir junto con ibuprofeno, aspirina u otros anticoagulantes.
+        </p>
+        <p>
+            Este sitio no es parte del sitio web de Google ni de Google Inc. Además, este sitio no está respaldado por Google de ninguna manera. GOOGLE es una marca comercial de GOOGLE Inc.
+        </p>
+        <p>
+            <a href="#">Políticas de Privacidad</a> | <a href="#">Términos y Condiciones</a> | <a href="#">Contacto</a>
+        </p>
+    </footer>
+
+</body>
+</html>
